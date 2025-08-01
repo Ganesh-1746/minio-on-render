@@ -1,9 +1,10 @@
 services:
   - type: web
-    name: minio
+    name: minio-on-render
     env: docker
     plan: free
     dockerfilePath: ./Dockerfile
+    healthCheckPath: /minio/health/live
     autoDeploy: false
     envVars:
       - key: MINIO_ROOT_USER
@@ -15,5 +16,5 @@ services:
       mountPath: /data
       sizeGB: 1
     ports:
-      - port: 80
-        targetPort: 9000
+      - 9000
+      - 9001
