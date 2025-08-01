@@ -11,10 +11,6 @@ services:
         value: minioadmin
       - key: MINIO_ROOT_PASSWORD
         value: minioadmin
-    disk:
-      name: minio-data
-      mountPath: /data
-      sizeGB: 1
     ports:
       - 9000
       - 9001
